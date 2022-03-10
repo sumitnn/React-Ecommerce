@@ -1,8 +1,17 @@
-import React from 'react'
+import React,{createContext,useState} from 'react';
+import { data } from '../dummy.js';
 
+export const DataContext = createContext();
 const Context = () => {
+  const [Data] = useState(data);
+  
+  
   return (
-    <div>Context</div>
+    <>
+      <DataContext.Provider value={Data}>
+
+      </DataContext.Provider>
+    </>
   )
 }
 
