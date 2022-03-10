@@ -5,7 +5,8 @@ import './main.css';
 import { DataContext } from '../contexts/Context';
 
 const Home = () => {
-    const data = useContext(DataContext);
+    const [data] = useContext(DataContext);
+    
     
   return (
       <>

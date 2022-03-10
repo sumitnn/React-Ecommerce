@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext,useReducer } from 'react';
 const Data = [
     {
         name: 'Cycle1',
@@ -126,10 +126,32 @@ const Data = [
 export const DataContext = createContext();
 
 
+
 const Context = (props) => {
+    const reducer = (state,action) => {
+        if (action.type === 'Increase') {
+            return state + 1
+        } else {
+            return state - 1
+        }
+
+    }
+    const reducerr = (statee, action) => {
+        if (action.type === 'ascending') {
+            console.log(typeof(statee))
+            statee.sort((a, b) => (a.price > b.price) ? 1 : -1)
+            return statee
+        } 
+
+    }
+    const [state, dispatch] = useReducer(reducer, 0);
+    const [statee, dispatchh] = useReducer(reducerr, Data);
     return (
-        <DataContext.Provider value={Data}>
-            {props.children}
+        <DataContext.Provider value={[statee,state,dispatch,dispatchh]}>
+            
+                {props.children}
+            
+          
       </DataContext.Provider>
     
   )

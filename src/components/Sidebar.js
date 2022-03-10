@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom';
-
+import { DataContext } from '../contexts/Context';
 const Sidebar = () => {
+    const [,,,dispatchh] = useContext(DataContext);
   return (
       <>
           <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{ "width": "280px" }}>
@@ -13,7 +14,7 @@ const Sidebar = () => {
                   <ul className="nav nav-pills flex-column mb-auto">
                   <li className="nav-item">
                       <div className="form-check form-switch">
-                          <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"/>
+                          <input className="form-check-input" type="checkbox" onChange={()=>dispatchh({type:"ascending"})} role="switch" id="flexSwitchCheckChecked"/>
                               <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Ascending</label>
                       </div></li>
                       
