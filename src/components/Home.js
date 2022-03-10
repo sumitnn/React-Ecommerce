@@ -1,16 +1,12 @@
 import React,{useContext} from 'react';
 import Sidebar from '../components/Sidebar';
-// import Main from '../components/Main';
+import Main from '../components/Main';
 import './main.css';
-import DataContext  from '../common/Context';
-
-
-
+import { DataContext } from '../contexts/Context';
 
 const Home = () => {
-    let Data= useContext(DataContext);
-    console.log(typeof(Data));
-
+    const data = useContext(DataContext);
+    
   return (
       <>
           <div className="container">
@@ -20,16 +16,13 @@ const Home = () => {
                   </div>
                   <div className="col-md-8">
                       <div className="row">
-                          {/* {
+                          {
                               data.map((val, i) => {
                                   return (
-                                  {val}
-                                      {/* <Main value={val} key={i} /> */ }
-                                      
+                                      <Main value={val} key={i} />
                                   )
                               })
-                          } */}
-
+                          }
                           
                       </div>
                   </div>

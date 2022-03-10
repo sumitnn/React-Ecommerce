@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Context from '../src/common/Context';
+import Context from './contexts/Context';
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context>
-      <App />
-    </Context>
+    <Context><App/></Context>
+      
     
+      
+
   </React.StrictMode>,
   document.getElementById('root')
 );
