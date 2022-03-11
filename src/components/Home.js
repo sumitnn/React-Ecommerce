@@ -1,11 +1,14 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import Sidebar from '../components/Sidebar';
 import Main from '../components/Main';
 import './main.css';
-import { DataContext } from '../contexts/Context';
+import { CartState } from '../contexts/Context';
+
+
 
 const Home = () => {
-    const [data] = useContext(DataContext);
+    const { state } = CartState();
+    console.log(state.cart);
     
     
   return (
@@ -17,14 +20,14 @@ const Home = () => {
                   </div>
                   <div className="col-md-8">
                       <div className="row">
+                          
                           {
-                              data.map((val, i) => {
+                              state.products.map((val, i) => {
                                   return (
-                                      <Main value={val} key={i} />
+                                      <Main value={val} key={i}/>
                                   )
                               })
                           }
-                          
                       </div>
                   </div>
               </div>

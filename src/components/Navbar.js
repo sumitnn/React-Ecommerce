@@ -1,11 +1,11 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
 import { FaShopify } from 'react-icons/fa';
-import { DataContext } from '../contexts/Context';
+import { CartState } from '../contexts/Context';
 
 const Navbar = () => {
-    const [,state,]= useContext(DataContext);
+const {state}= CartState();
   return (
       <>
           <nav className="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
@@ -22,7 +22,7 @@ const Navbar = () => {
                        
                           </ul>
                       <div className="nav-link ">
-                          <button className="btn btn-outline-warning"><BiCart style={{ "fontSize": "30px" }} /> <span>{state}</span> Cart</button>
+                          <Link to="/cart" className="btn btn-outline-warning"><BiCart style={{ "fontSize": "30px" }} /> <span>{state.cart.length}</span> Cart</Link>
 
                       </div>
                   </div>

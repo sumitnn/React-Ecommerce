@@ -3,7 +3,8 @@ import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
-import React  from 'react';
+import React from 'react';
+import Cart from './components/Cart';
 
 const App = () => {
   return (
@@ -12,14 +13,10 @@ const App = () => {
       <div className="container mb-5 p-3 bg-dark ">
         <Navbar />
       </div>
-      <Routes>
-
-        
-          
-        
+      <Routes>        
         <Route path="/" exact element={<Home/>} />
         <Route path="/contact" exact element={<ContactForm/>} />
-        {/* <Route path="/context" exact element={<Context/>} /> */}
+        <Route path="/cart" exact element={<Cart/>} />
         <Route path="*"  element={'404 Page Not Found'} />
         
       </Routes>
