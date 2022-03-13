@@ -16,7 +16,7 @@ const Sidebar = () => {
                   <li className="nav-item">
                       <div className="form-check form-switch">
                           <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={sstate.byascending} onChange={
-                              (e)=>{sdispatch({type:'a',payload:e.target.value})}
+                              (e)=>{sdispatch({type:'a',payload:"a"})}
                            }/>
                               <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Ascending</label>
                       </div></li>
@@ -24,12 +24,16 @@ const Sidebar = () => {
                   <li className="nav-item">
                       <div className="form-check form-switch">
                           <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-                          <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Fast Delivery</label>
+                          <label className="form-check-label" htmlFor="flexSwitchCheckChecked" checked={sstate.byfastdelivery} onChange={
+                              (e) => { sdispatch({ type: 'fd'}) }
+                          }>Fast Delivery</label>
                       </div></li>
                   <li className="nav-item">
                       <div className="form-check form-switch">
                           <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-                          <label className="form-check-label" htmlFor="flexSwitchCheckChecked">In Stock</label>
+                          <label className="form-check-label" htmlFor="flexSwitchCheckChecked" checked={sstate.bystock} onChange={
+                              (e) => { sdispatch({ type: 'is' }) }
+                          }>In Stock</label>
                       </div></li>
                  
               

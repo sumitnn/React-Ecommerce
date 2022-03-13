@@ -7,8 +7,22 @@ import { CartState } from '../contexts/Context';
 
 
 const Home = () => {
-    const { state } = CartState();
-    console.log(state.cart);
+    const { state,sstate } = CartState();
+    const transform = () => {
+        let products = state.products;
+        if (sstate.byascending) {
+            products = products.sort((a, b) => 
+                sstate.byascending ==="a"?a.price -b.price :b.price -a.price
+            )
+        }
+        if (sstate.bystock) {
+            products=products.filter((a) =>a.instock)
+        }
+        if (sstate.byfastdelivery) {
+            products = products.filter((a) => a.fastdelivery)
+        }
+        return products;
+    }
     
     
   return (
@@ -22,7 +36,7 @@ const Home = () => {
                       <div className="row">
                           
                           {
-                              state.products.map((val, i) => {
+                              transform().map((val, i) => {
                                   return (
                                       <Main value={val} key={i}/>
                                   )

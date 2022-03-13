@@ -18,11 +18,11 @@ export const cartReducer = (state, action) => {
 export const sideReducer = (state, action) => {
     switch (action.type) {
         case "a":
-            return { };
+            return { ...state, byascending:action.payload };
         case "fd":
-            return {  };
+            return { ...state, byfastdelivery: !state.byfastdelivery  };
         case "is":
-            return {  }
+            return { ...state, bystock:!state.bystock  }
         default:
             return state
     }
