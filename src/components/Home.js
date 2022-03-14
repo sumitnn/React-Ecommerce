@@ -11,15 +11,17 @@ const Home = () => {
     const transform = () => {
         let products = state.products;
         if (sstate.byascending) {
-            products = products.sort((a, b) => 
-                sstate.byascending ==="a"?a.price -b.price :b.price -a.price
+            products = products.sort((a, b) => a.price -b.price 
             )
         }
-        if (sstate.bystock) {
+        else if (sstate.bystock) {
             products=products.filter((a) =>a.instock)
         }
-        if (sstate.byfastdelivery) {
+        else if (sstate.byfastdelivery) {
             products = products.filter((a) => a.fastdelivery)
+        }
+        else {
+            return products
         }
         return products;
     }

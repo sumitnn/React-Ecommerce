@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 import React from 'react';
 import Cart from './components/Cart';
+import SingleProduct from './components/SingleProduct';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" exact element={<Home/>} />
         <Route path="/contact" exact element={<ContactForm/>} />
         <Route path="/cart" exact element={<Cart/>} />
+        <Route path="/single-product/:id"  element={<SingleProduct/>} />
         <Route path="*"  element={'404 Page Not Found'} />
         
       </Routes>

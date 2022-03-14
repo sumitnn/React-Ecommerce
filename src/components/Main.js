@@ -1,5 +1,6 @@
 import React  from 'react';
 import { CartState } from '../contexts/Context';
+import { Link } from 'react-router-dom';
 
 const Main = ({ value }) => {
     const { state, dispatch } = CartState();
@@ -7,7 +8,8 @@ const Main = ({ value }) => {
     
   return (
       <> <div className="col-md-4 mb-5">
-          <div className="card h-100 shadow-sm"> <img src={value.image} className="card-img-top" alt={value.name }/>
+          <div className="card h-100 shadow-sm">
+              <Link to={`/single-product/${value.id}`}>   <img src={value.image} className="card-img-top" alt={value.name} /></Link>
                           <div className="card-body">
                       <div className="clearfix mb-3"> <span className="float-start badge rounded-pill bg-primary">{value.name}</span> <span className="float-end price-hp">₹{value.price }</span> </div>
                       <h5 className="card-title">{value.description }</h5>
