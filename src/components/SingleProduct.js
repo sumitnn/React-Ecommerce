@@ -1,6 +1,6 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import './single.css';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import { CartState } from '../contexts/Context';
 
 const SingleProduct = () => {
@@ -18,7 +18,7 @@ const SingleProduct = () => {
                   
                   <div className="row row-sm">
                       <div className="col-md-6 _boxzoom">  
-                      <img src={data[0].image}    alt=".."/>
+                      <img src=""    alt=".."/>
                       </div>
                       <div className="col-md-6">
                           <div className="_product-detail-content">
@@ -28,14 +28,7 @@ const SingleProduct = () => {
                                       <span> M.R.P. : <i className="fa fa-inr"></i> <del> 1399  </del>   </span>
                                       <span className="price"> Rs. {data[0].price} </span>
                                   </div>
-                                  <div className="_p-add-cart">
-                                      <div className="_p-qty">
-                                          <span>Add Quantity</span>
-                                          <div className="value-button decrease_" id="" value="Decrease Value">-</div>
-                                          <input type="number" name="qty" id="number" value="1" />
-                                          <div className="value-button increase_" id="" value="Increase Value">+</div>
-                                      </div>
-                                  </div>
+                                 
                                   <div className="_p-features">
                                       <span> Description About this product:- </span>
                                       {data[0].description}
@@ -78,11 +71,11 @@ const SingleProduct = () => {
                                       <div className="sq_box shadow">
                                           <div className="pdis_img">
                                               <span className="wishlist">
-                                                  <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i className="fa fa-heart"></i></a>
+                                         
                                               </span>
-                                              <a href="#">
-                                                  <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/" />
-                                              </a>
+                                              <Link to="#">
+                                                  <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/" alt=""/>
+                                              </Link>
                                           </div>
                                           <h4 className="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
                                           <div className="price-box mb-2">
@@ -90,7 +83,7 @@ const SingleProduct = () => {
                                               <span className="offer-price"> Offer Price <i className="fa fa-inr"></i> 120 </span>
                                           </div>
                                           <div className="btn-box text-center">
-                                              <a className="btn btn-sm" href=""> <i className="fa fa-shopping-cart"></i> Add to Cart </a>
+                                              <button className="btn btn-sm" > <i className="fa fa-shopping-cart"></i> Add to Cart </button>
                                           </div>
                                       </div>
                                   </div>

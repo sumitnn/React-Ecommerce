@@ -13,15 +13,10 @@ const Home = () => {
         if (sstate.byascending) {
             products = products.sort((a, b) => a.price -b.price 
             )
-        }
-        else if (sstate.bystock) {
-            products=products.filter((a) =>a.instock)
-        }
-        else if (sstate.byfastdelivery) {
-            products = products.filter((a) => a.fastdelivery)
+            
         }
         else {
-            return products
+            products = products.sort((a, b) => b.price - a.price )
         }
         return products;
     }
